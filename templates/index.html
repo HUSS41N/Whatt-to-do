@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>What To DO?</title>
+</head>
+<body>
+    <div>
+        <h1 id="header">WHAT TO DO?</h1>
+        <p></p>
+    </div>
+    
+    <div id="container">
+        <h1>What to Do?<span id="span"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></h1>
+            <form action="" method="POST">
+                {{form.hidden_tag()}}
+                {{form.add(placeholder="ADD HERE", maxlength="40", minlength="10")}}
+                      
+            </form>
+    
+        <ul>
+        {% for td in list_todo %}
+            <li> <a href="{{url_for('delete',todos_id=td.id)}}"><span> <i class="fa fa-trash-o" aria-hidden="true"></i> </span></a> {{td}} </li> 
+        {% endfor %}
+            
+        </ul>
+
+    </div>
+    
+</body>
+</html>
